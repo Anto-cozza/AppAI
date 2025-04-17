@@ -3,7 +3,7 @@
 # -----------------------------------------------------
 # Come eseguire la demo:
 # 1. Assicurati di avere Python installato
-# 2. Installa le dipendenze: pip install streamlit pandas matplotlib pillow python-docx PyPDF2
+# 2. Installa le dipendenze: pip install streamlit pandas matplotlib pillow python-docx pypdf
 # 3. Salva questo file come 'app.py'
 # 4. Esegui: streamlit run app.py
 # -----------------------------------------------------
@@ -19,7 +19,7 @@ import datetime
 import random
 import tempfile
 from PIL import Image
-import PyPDF2
+import pypdf  # Modificato da PyPDF2 a pypdf
 import time
 from datetime import datetime, timedelta
 
@@ -133,7 +133,7 @@ def extract_text_from_pdf(file_path):
     text = ""
     try:
         with open(file_path, 'rb') as file:
-            pdf_reader = PyPDF2.PdfReader(file)
+            pdf_reader = pypdf.PdfReader(file)  # Modificato da PyPDF2.PdfReader a pypdf.PdfReader
             for page in pdf_reader.pages:
                 text += page.extract_text() + "\n"
         return text
