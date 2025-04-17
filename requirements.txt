@@ -1,1 +1,6 @@
+streamlit
+pandas
 matplotlib
+pillow
+python-docx
+PyPDF2==3.0.1matplotlib
